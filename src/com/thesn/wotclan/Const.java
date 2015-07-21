@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class Const {
 
-    public final static String APPLICATION_ID = "demo";
+    public final static String APPLICATION_ID = "demo";  // заменить на свой ключ
     public final static String CLAN_ID = "140251";
     public final static String CLAN_URL = String.format("http://api.worldoftanks.ru/wgn/clans/info/?application_id=%s&clan_id=%s", APPLICATION_ID, CLAN_ID);
     public final static String ACCOUNT_URL_FORMAT = "http://api.worldoftanks.ru/wot/account/info/?application_id=%s&account_id=%s";
