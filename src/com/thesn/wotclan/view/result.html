@@ -1,0 +1,1054 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Статистика клана</title> 
+  <style type="text/css">
+        body {
+        width: 650px;
+        margin: 40px auto;
+        font-family: 'trebuchet MS', 'Lucida sans', Arial;
+        font-size: 14px;
+        color: #444;
+        }
+
+        table {
+        *border-collapse: collapse; /* IE7 и раньше */
+        border-spacing: 0;
+        width: 100%;
+        }
+
+        .bordered {
+        border: solid #ccc 1px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        -webkit-box-shadow: 0 1px 1px #ccc;
+        -moz-box-shadow: 0 1px 1px #ccc;
+        box-shadow: 0 1px 1px #ccc;
+        }
+
+        .red {
+        background: #FAE9E5;
+
+        }
+
+
+        .green {
+        background: #E8F4D9;
+
+        }
+
+        .yellow {
+        background: #FEFFB7;
+
+        }
+
+        .purple {
+        background: #F2CAF3;
+
+        }
+
+        .bordered td, .bordered th {
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+        }
+
+        .bordered th {
+        background-color: #dce9f9;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+        background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+        background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+        background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+        background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+        background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+        -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+        -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+        box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+        border-top: none;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+        }
+
+        .bordered td:first-child, .bordered th:first-child {
+        border-left: none;
+        }
+
+        .bordered th:first-child {
+        -moz-border-radius: 6px 0 0 0;
+        -webkit-border-radius: 6px 0 0 0;
+        border-radius: 6px 0 0 0;
+        }
+
+        .bordered th:last-child {
+        -moz-border-radius: 0 6px 0 0;
+        -webkit-border-radius: 0 6px 0 0;
+        border-radius: 0 6px 0 0;
+        }
+
+        .bordered th:only-child{
+        -moz-border-radius: 6px 6px 0 0;
+        -webkit-border-radius: 6px 6px 0 0;
+        border-radius: 6px 6px 0 0;
+        }
+
+        .bordered tr:last-child td:first-child {
+        -moz-border-radius: 0 0 0 6px;
+        -webkit-border-radius: 0 0 0 6px;
+        border-radius: 0 0 0 6px;
+        }
+
+        .bordered tr:last-child td:last-child {
+        -moz-border-radius: 0 0 6px 0;
+        -webkit-border-radius: 0 0 6px 0;
+        border-radius: 0 0 6px 0;
+        }
+
+        .pattern {display:none;}
+        .help{cursor:help;}
+
+        .blockquote {
+        border: dotted #666 1px;
+        border-left:solid #75a035 5px;
+        border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;
+        margin:10px 20px;
+        padding:15px;
+        color:#333;
+        font-size:14px;
+        background:#fcfcfc;
+        }
+    </style> 
+  <script type="text/javascript" src="http://s105.ucoz.net/src/jquery-1.7.2.js"></script> 
+ </head> 
+ <body> 
+  <h3 class="tableName" align="center">Статистика клана [КВ-1_] за 01.07.15 — 21.07.15</h3> 
+  <div class="blockquote"> 
+   <img style="float:left; padding-right:10px; cursor:help" src="http://clans.worldoftanks.ru/media/clans/emblems/cl_251/140251/emblem_32x32.png" title="<b>Это веселый чувак, он тут заведует всем)</b>"> Привет! Я расскажу, что и как здесь устроено! :) Для корректного просмотра статистики необходимо соединение с интернетом. Все колонки таблицы оборудованы подсказками, чтобы их получить, пожалуйста, наведи курсор мыши на элемент, который вызвал вопросы. Рекомендую в первую очередь проделать это с заголовками таблицы. 
+   <div id="clickme"> 
+    <br> 
+    <a href="#">Мне интересно, продолжай...</a> 
+   </div> 
+   <div id="content" style="display:none"> 
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;Информация отсортирована по убыванию рейтинга, то есть, сверху расположились самые крутые игроки, а снизу те, кого в следующей таблице уже скорее всего не будет. Сам рейтинг считается по сложной формуле, причем наибольший вклад в результат вычислений вносит процент игры на клановой технике (КВ-1 и T67) по сравнению с другими танками за то время, в течение которого собиралась статистика. Нормальное значение: 40%, но играя результативно (с высоким % побед, дамагом, отметками и медалями), можно иметь долю игр около 20-30%. Также есть постоянная прибавка к рейтингу, она зависит от количества боев на клановой технике и полученных отметок. 
+    <br> 
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;Возможно, ты думаешь, что нужно быть задротом, чтобы удержать достойную позицию в рейтинге, но это не так. Чтобы не получить в рейтинге "0", который выдается за неактивность, достаточно отыграть 30 боев за месяц. И если ты отыграешь на нашей технике 70% из них, то точно будешь "зеленым" в списке, обещаю. 
+    <br> 
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;Если ты встанешь на темную сторону Силы и продашь клановую технику, либо будешь выкатывать ее слишком редко, у меня плохая новость: раз в две недели я мгновенно исключаю этих игроков =) В рейтинге у них стоит "-100". 
+    <br> 
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;Для тех, у кого возник вопрос, почему в фановом клане КВ-1 учитывается и T67, отвечу: взвод из трех КВ малоэффективен на открытых картах, желательно брать одного T67 в бой, что многие здесь и делают. Но никто лично тебя не заставляет играть на нем, если не нравится эта машина, играй только на КВ-1, или наоборот - на рейтинг это слабо повлияет. 
+    <br> 
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;Итак, все строки в таблице разного цвета для удобства восприятия. 
+    <br> - 
+    <font color="green">Зеленым</font> цветом я отметил тех, кто успешно прошел клановый контроль игры, а 
+    <font color="purple">фиолетовым</font> - местных статистов :) 
+    <br> - 
+    <font color="red">Красным</font> отметил игроков, показавших плохие результаты. Если они зашли в глубокий минус, то будут исключены (но если игрок командует кланом или успешно участвует в вылазках, то оставлю, так уж и быть :) ). 
+    <br> - 
+    <font color="orange">Желтым</font> отмечены игроки, проявившие малую активность за последнее время (количество боев меньше количества дней, за которые собиралась эта статистика). Если бездействие продолжается длительный срок, они размещаются ниже остальных и тоже подлежат исключению. 
+    <br> 
+    <br> P.S. Если я найду твой игровой ник в специальной теме нашей группы ВК, то добавлю немного бонусных баллов! 
+    <br> 
+    <br> 
+    <div align="right">
+      Удачи! 
+    </div> 
+   </div> 
+  </div> 
+  <div class="blockquote" id="commonstat">
+   <img style="float:left; padding-right:10px; cursor:help" src="https://cdn3.iconfinder.com/data/icons/fatcow/32/chart_bar.png" title="Это общая статистика клана"> Всего сыграно боев: 10901. Доля игр на КВ-1: 23%, а на T67: 8%.
+   <br>Средний процент побед: 61%, средний урон: 760.
+  </div> 
+  <br> 
+  <br> 
+  <table class="bordered"> 
+   <thead> 
+    <tr> 
+     <th>№</th> 
+     <th style="cursor:help;" title="Учитываются только игроки, которые присутствовали в клане<br>с начала ведения статистики и остались в нем.<br />В скобках, если они есть, отображается старый никнейм игрока.">Имя игрока</th> 
+     <th style="cursor:help;" title="Всего боев на клановой технике: КВ-1 и Т67.<br>Рядом указаны полученные отметки на орудии (звезды).">Всего боев</th> 
+     <th style="cursor:help;" title="Бои на КВ-1 и Т67, деленные на общее число рандомных боев<br>за рассматриваемый период">Доля игры</th> 
+     <th style="cursor:help;" title="Чем больше вылазок и чем они результативнее,<br>тем больше баллов добавляется к рейтингу">Вылазки</th> 
+     <th style="cursor:help;" title="Новые отметки на танках КВ-1 и Т67!<br>Крутые медали:<br>Камикадзе, де Ланглада, Братья по оружию,<br>Решающий вклад, Халонена, Рэдли-Уолтерса, Пула,<br>Колобанова, героев Рассейняя :)">Достижения</th> 
+     <th style="cursor:help;" title="Расчитываемый показатель активности,<br>именно по нему составляется эта таблица.
+            <br>Зависит от количества боев на Т67 и КВ-1<br>вместе, по сравнению с другими танками<br>(норма: 40%), среднего дамага за период<br>
+            времени (норма: 600-650), % побед на танках<br>(норма: 57%).<br>Однако, компоненты, отвечающие за качество<br>игры, загнаны в определенные рамки,<br>поэтому решающий фактор - количество.<br> Внимание: игроки, уделяющие внимание<br>обоим танкам,
+            получают преимущество:<br>в формулу вставляется более<br>результативный танк.<br>Также учитываются эпические медали,<br>отметки и общее количество боев<br>на клановой технике.">Рейтинг</th> 
+    </tr> 
+   </thead> 
+   <tbody>                                                                  
+    <tr class="purple"> 
+     <td>1</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Заместитель командующего<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 19.07.15" class="help">Generalus</td> 
+     <td title="Боев на КВ-1: 4926 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!<br />Боев на T67: 2176 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!" class="help">7102</td> 
+     <td title="Сражений на аккаунте за период времени: <b>223</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 87, стата: 85%, урон: 1110.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 43, стата: 86%, урон: 1368.<br>" class="help">58%</td> 
+     <td title="- Побед: 0%<br /> - Выживаемость: 0%" class="help">2</td> 
+     <td title=" - Братья по оружию: 8<br /> - Решающий вклад: 1<br /> - Колобанов: 1<br /> - Рэдли-Уолтерс: 2<br /> - Камикадзе: 1<br />" class="help">13</td> 
+     <td>270</td> 
+    </tr>
+    <tr class="purple"> 
+     <td>2</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">LLIAHCOH4IK</td> 
+     <td title="Боев на КВ-1: 6133 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!<br />Боев на T67: 0 " class="help">6133</td> 
+     <td title="Сражений на аккаунте за период времени: <b>302</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 254, стата: 70%, урон: 833.<br>" class="help">84%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 11<br />" class="help">11</td> 
+     <td>242</td> 
+    </tr>
+    <tr class="purple"> 
+     <td>3</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Офицер по кадрам<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 19.07.15" class="help">red_rash21rus</td> 
+     <td title="Боев на КВ-1: 858 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 391 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">1249</td> 
+     <td title="Сражений на аккаунте за период времени: <b>306</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 170, стата: 58%, урон: 778.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 29, стата: 45%, урон: 551.<br>" class="help">65%</td> 
+     <td>0</td> 
+     <td title=" - На КВ-1 получено <font color='green'><b>две</b></font> отметки!<br /> - Братья по оружию: 9<br />" class="help">10</td> 
+     <td>213</td> 
+    </tr>
+    <tr class="green"> 
+     <td>4</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">Kokhinkhinskiy_karkadil</td> 
+     <td title="Боев на КВ-1: 189 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 346 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">535</td> 
+     <td title="Сражений на аккаунте за период времени: <b>383</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 71, стата: 56%, урон: 784.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 220, стата: 69%, урон: 841.<br>" class="help">76%</td> 
+     <td>0</td> 
+     <td title=" - На T67 получено <font color='green'><b>две</b></font> отметки!<br /> - Братья по оружию: 3<br /> - Халонен: 1<br />" class="help">5</td> 
+     <td>159</td> 
+    </tr>
+    <tr class="green"> 
+     <td>5</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">Guru1994</td> 
+     <td title="Боев на КВ-1: 5416 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!<br />Боев на T67: 0 " class="help">5416</td> 
+     <td title="Сражений на аккаунте за период времени: <b>324</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 184, стата: 66%, урон: 964.<br>" class="help">57%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 5<br /> - Рэдли-Уолтерс: 1<br />" class="help">6</td> 
+     <td>149</td> 
+    </tr>
+    <tr class="green"> 
+     <td>6</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">NikitOZ_22ru</td> 
+     <td title="Боев на КВ-1: 461 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 22 " class="help">483</td> 
+     <td title="Сражений на аккаунте за период времени: <b>75</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 40, стата: 73%, урон: 728.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 22, стата: 23%, урон: 454.<br>" class="help">83%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 1<br /> - Колобанов: 1<br /> - Рэдли-Уолтерс: 1<br />" class="help">3</td> 
+     <td>108</td> 
+    </tr>
+    <tr class="green"> 
+     <td>7</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Командир подразделения<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">Marozzzz</td> 
+     <td title="Боев на КВ-1: 3669 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 343 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">4012</td> 
+     <td title="Сражений на аккаунте за период времени: <b>320</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 34, стата: 50%, урон: 842.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 167, стата: 61%, урон: 780.<br>" class="help">63%</td> 
+     <td title="- Побед: 0%<br /> - Выживаемость: 0%" class="help">2</td> 
+     <td title=" - Братья по оружию: 1<br /> - Рэдли-Уолтерс: 1<br />" class="help">2</td> 
+     <td>83</td> 
+    </tr>
+    <tr class="green"> 
+     <td>8</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">RedW1ng</td> 
+     <td title="Боев на КВ-1: 2885 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">2885</td> 
+     <td title="Сражений на аккаунте за период времени: <b>324</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 147, стата: 58%, урон: 783.<br>" class="help">45%</td> 
+     <td>0</td> 
+     <td title=" - На КВ-1 получено <font color='green'><b>две</b></font> отметки!<br /> - Братья по оружию: 1<br />" class="help">2</td> 
+     <td>76</td> 
+    </tr>
+    <tr class="green"> 
+     <td>9</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">tabula_rassa</td> 
+     <td title="Боев на КВ-1: 2062 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 94 " class="help">2156</td> 
+     <td title="Сражений на аккаунте за период времени: <b>470</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 186, стата: 61%, урон: 759.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 16, стата: 38%, урон: 396.<br>" class="help">43%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 2<br />" class="help">2</td> 
+     <td>59</td> 
+    </tr>
+    <tr class="green"> 
+     <td>10</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">SirAmbi</td> 
+     <td title="Боев на КВ-1: 1588 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">1588</td> 
+     <td title="Сражений на аккаунте за период времени: <b>701</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 141, стата: 65%, урон: 462.<br>" class="help">20%</td> 
+     <td title="- Побед: 0%<br /> - Выживаемость: 50%" class="help">2</td> 
+     <td title=" - Братья по оружию: 3<br /> - Решающий вклад: 1<br /> - Рэдли-Уолтерс: 1<br />" class="help">5</td> 
+     <td>58</td> 
+    </tr>
+    <tr class="green"> 
+     <td>11</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">Nikolai1990z</td> 
+     <td title="Боев на КВ-1: 3167 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">3167</td> 
+     <td title="Сражений на аккаунте за период времени: <b>241</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 61, стата: 66%, урон: 849.<br>" class="help">25%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 3<br />" class="help">3</td> 
+     <td>56</td> 
+    </tr>
+    <tr class="green"> 
+     <td>12</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Командир подразделения<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 19.07.15" class="help">__O_o__o_o__o_O__</td> 
+     <td title="Боев на КВ-1: 984 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 160 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">1144</td> 
+     <td title="Сражений на аккаунте за период времени: <b>70</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 32, стата: 72%, урон: 920.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 9, стата: 67%, урон: 920.<br>" class="help">59%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>55</td> 
+    </tr>
+    <tr class="green"> 
+     <td>13</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">pokoinui</td> 
+     <td title="Боев на КВ-1: 1053 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 268 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">1321</td> 
+     <td title="Сражений на аккаунте за период времени: <b>440</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 87, стата: 54%, урон: 829.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 47, стата: 57%, урон: 888.<br>" class="help">30%</td> 
+     <td>0</td> 
+     <td title=" - На T67 получено <font color='green'><b>две</b></font> отметки!<br /> - Братья по оружию: 1<br />" class="help">2</td> 
+     <td>52</td> 
+    </tr>
+    <tr class="green"> 
+     <td>14</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">SVadimKa</td> 
+     <td title="Боев на КВ-1: 754 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 311 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">1065</td> 
+     <td title="Сражений на аккаунте за период времени: <b>545</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 105, стата: 55%, урон: 781.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 67, стата: 55%, урон: 583.<br>" class="help">32%</td> 
+     <td>0</td> 
+     <td title=" - На КВ-1 получено <font color='green'><b>две</b></font> отметки!<br /> - Братья по оружию: 1<br />" class="help">2</td> 
+     <td>47</td> 
+    </tr>
+    <tr class="green"> 
+     <td>15</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">xBulletGTx_Live</td> 
+     <td title="Боев на КВ-1: 481 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">481</td> 
+     <td title="Сражений на аккаунте за период времени: <b>65</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 40, стата: 53%, урон: 606.<br>" class="help">62%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 1<br />" class="help">1</td> 
+     <td>37</td> 
+    </tr>
+    <tr class="green"> 
+     <td>16</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 14.07.15" class="help">alex_888_snajper</td> 
+     <td title="Боев на КВ-1: 800 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">800</td> 
+     <td title="Сражений на аккаунте за период времени: <b>37</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 28, стата: 43%, урон: 491.<br>" class="help">76%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>37</td> 
+    </tr>
+    <tr class="green"> 
+     <td>17</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">maks_moto46</td> 
+     <td title="Боев на КВ-1: 1155 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!<br />Боев на T67: 87 " class="help">1242</td> 
+     <td title="Сражений на аккаунте за период времени: <b>310</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 97, стата: 60%, урон: 971.<br>" class="help">31%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 1<br />" class="help">1</td> 
+     <td>29</td> 
+    </tr>
+    <tr class="green"> 
+     <td>18</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">BoBBaoBaB</td> 
+     <td title="Боев на КВ-1: 1557 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!<br />Боев на T67: 1214 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">2771</td> 
+     <td title="Сражений на аккаунте за период времени: <b>360</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 68, стата: 57%, урон: 734.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 70, стата: 59%, урон: 673.<br>" class="help">38%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>26</td> 
+    </tr>
+    <tr class="green"> 
+     <td>19</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 17.07.15" class="help">SergA_0rsha</td> 
+     <td title="Боев на КВ-1: 2483 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 316 " class="help">2799</td> 
+     <td title="Сражений на аккаунте за период времени: <b>165</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 49, стата: 49%, урон: 542.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 11, стата: 64%, урон: 254.<br>" class="help">36%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 2<br />" class="help">2</td> 
+     <td>19</td> 
+    </tr>
+    <tr class="green"> 
+     <td>20</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 15.07.15" class="help">Gerc__OG</td> 
+     <td title="Боев на КВ-1: 2240 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 76 " class="help">2316</td> 
+     <td title="Сражений на аккаунте за период времени: <b>123</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 41, стата: 61%, урон: 707.<br>" class="help">33%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>17</td> 
+    </tr>
+    <tr class="green"> 
+     <td>21</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">men130797</td> 
+     <td title="Боев на КВ-1: 373 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 614 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">987</td> 
+     <td title="Сражений на аккаунте за период времени: <b>528</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 57, стата: 68%, урон: 628.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 54, стата: 67%, урон: 803.<br>" class="help">21%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 1<br />" class="help">1</td> 
+     <td>16</td> 
+    </tr>
+    <tr class="green"> 
+     <td>22</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Офицер по кадрам<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">MoonSpirit99</td> 
+     <td title="Боев на КВ-1: 1403 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 204 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">1607</td> 
+     <td title="Сражений на аккаунте за период времени: <b>161</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 16, стата: 56%, урон: 742.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 9, стата: 89%, урон: 1018.<br>" class="help">16%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>15</td> 
+    </tr>
+    <tr class="green"> 
+     <td>23</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 08.07.15" class="help">TAHKuCT_KB_1</td> 
+     <td title="Боев на КВ-1: 212 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">212</td> 
+     <td title="Сражений на аккаунте за период времени: <b>19</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 7, стата: 43%, урон: 416.<br>" class="help">37%</td> 
+     <td>0</td> 
+     <td title=" - Рэдли-Уолтерс: 1<br />" class="help">1</td> 
+     <td>12</td> 
+    </tr>
+    <tr class="green"> 
+     <td>24</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">mirmouse</td> 
+     <td title="Боев на КВ-1: 5152 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">5152</td> 
+     <td title="Сражений на аккаунте за период времени: <b>482</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 124, стата: 57%, урон: 695.<br>" class="help">26%</td> 
+     <td title="- Побед: 0%<br /> - Выживаемость: 0%" class="help">2</td> 
+     <td>0</td> 
+     <td>7</td> 
+    </tr>
+    <tr class="green"> 
+     <td>25</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">aaa543210</td> 
+     <td title="Боев на КВ-1: 1867 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 451 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">2318</td> 
+     <td title="Сражений на аккаунте за период времени: <b>463</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 74, стата: 61%, урон: 675.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 17, стата: 59%, урон: 694.<br>" class="help">20%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>2</td> 
+    </tr>
+    <tr class="green"> 
+     <td>26</td> 
+     <td title="- Статус: контроль успешно пройден!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 19.07.15" class="help">GerOberLetinant</td> 
+     <td title="Боев на КВ-1: 2268 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">2268</td> 
+     <td title="Сражений на аккаунте за период времени: <b>298</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 43, стата: 60%, урон: 677.<br>" class="help">14%</td> 
+     <td title="- Побед: 0%<br /> - Выживаемость: 0%" class="help">2</td> 
+     <td title=" - Братья по оружию: 1<br />" class="help">1</td> 
+     <td>1</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>27</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 19.07.15" class="help">Olesia23</td> 
+     <td title="Боев на КВ-1: 1010 <br />Боев на T67: 132 " class="help">1142</td> 
+     <td title="Сражений на аккаунте за период времени: <b>7</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 7, стата: 43%, урон: 367.<br>" class="help">100%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>28</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Резервист<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 14.07.15" class="help">NOGI_CAIMONA</td> 
+     <td title="Боев на КВ-1: 1054 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 207 " class="help">1261</td> 
+     <td title="Сражений на аккаунте за период времени: <b>1</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>29</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 14.07.15" class="help">vlad2710russ</td> 
+     <td title="Боев на КВ-1: 801 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 89 " class="help">890</td> 
+     <td title="Сражений на аккаунте за период времени: <b>4</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 1, стата: 0%, урон: —.<br>" class="help">25%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>30</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 10.07.15" class="help">LeBrOn_MnZ</td> 
+     <td title="Боев на КВ-1: 2505 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">2505</td> 
+     <td title="Сражений на аккаунте за период времени: <b>5</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 5, стата: 40%, урон: —.<br>" class="help">100%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>31</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 07.07.15" class="help">boostskill</td> 
+     <td title="Боев на КВ-1: 241 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 27 " class="help">268</td> 
+     <td title="Сражений на аккаунте за период времени: <b>10</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 9, стата: 11%, урон: 478.<br>" class="help">90%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>32</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 03.07.15" class="help">_Voron101_</td> 
+     <td title="Боев на КВ-1: 6436 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">6436</td> 
+     <td title="Сражений на аккаунте за период времени: <b>10</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 7, стата: 43%, урон: -74.<br>" class="help">70%</td> 
+     <td>0</td> 
+     <td title=" - Братья по оружию: 1<br />" class="help">1</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>33</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 02.07.15" class="help">HABIL_CTATy_B_POTAX</td> 
+     <td title="Боев на КВ-1: 30 <br />Боев на T67: 0 " class="help">30</td> 
+     <td title="Сражений на аккаунте за период времени: <b>1</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 1, стата: 0%, урон: —.<br>" class="help">100%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>34</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 30.06.15" class="help">dikkon</td> 
+     <td title="Боев на КВ-1: 482 <br />Боев на T67: 720 " class="help">1202</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>35</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 28.06.15" class="help">Svin9K</td> 
+     <td title="Боев на КВ-1: 6085 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 4388 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">10473</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>36</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 27.06.15" class="help">Der_Alte</td> 
+     <td title="Боев на КВ-1: 388 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 138 " class="help">526</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>37</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 26.06.15" class="help">F__Kedah</td> 
+     <td title="Боев на КВ-1: 94 <br />Боев на T67: 214 " class="help">308</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>38</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 24.06.15" class="help">Max_Otto_von_StierIitz</td> 
+     <td title="Боев на КВ-1: 6273 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!<br />Боев на T67: 3 " class="help">6276</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>39</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 19.06.15" class="help">B0BAH_C_NHOPCA</td> 
+     <td title="Боев на КВ-1: 660 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 136 " class="help">796</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>40</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 19.06.15" class="help">40tonn_XPEHA</td> 
+     <td title="Боев на КВ-1: 304 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 1 " class="help">305</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>41</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 17.06.15" class="help">zmei_58</td> 
+     <td title="Боев на КВ-1: 1875 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 2415 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">4290</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>42</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 16.06.15" class="help">BWhite</td> 
+     <td title="Боев на КВ-1: 2917 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">2917</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>43</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 05.06.15" class="help">MyJLbmuk</td> 
+     <td title="Боев на КВ-1: 188 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 22 " class="help">210</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>44</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 27.05.15" class="help">Wotgangster</td> 
+     <td title="Боев на КВ-1: 139 <br />Боев на T67: 0 " class="help">139</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>45</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 13.05.15" class="help">_TEXHO3ABP_</td> 
+     <td title="Боев на КВ-1: 947 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 94 " class="help">1041</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>46</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 11.05.15" class="help">Koocherama</td> 
+     <td title="Боев на КВ-1: 3628 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 2045 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">5673</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>47</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 05.05.15" class="help">JustWalk</td> 
+     <td title="Боев на КВ-1: 1102 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 164 " class="help">1266</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>48</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Резервист<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 30.04.15" class="help">Heavy_Tankist96</td> 
+     <td title="Боев на КВ-1: 213 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 885 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">1098</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>49</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Резервист<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 10.04.15" class="help">neboskriob1</td> 
+     <td title="Боев на КВ-1: 294 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 843 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">1137</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>50</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Резервист<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 01.04.15" class="help">Holmess88</td> 
+     <td title="Боев на КВ-1: 708 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!<br />Боев на T67: 9 " class="help">717</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="yellow"> 
+     <td>51</td> 
+     <td title="- Статус: неактивный игрок.<br /> - Должность: Командующий<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 12.03.15" class="help">Matroski_n</td> 
+     <td title="Боев на КВ-1: 7611 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 101 " class="help">7712</td> 
+     <td title="Сражений на аккаунте за период времени: <b>0</b>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+    </tr>
+    <tr class="red"> 
+     <td>52</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">Glamrock</td> 
+     <td title="Боев на КВ-1: 917 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 145 " class="help">1062</td> 
+     <td title="Сражений на аккаунте за период времени: <b>374</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 37, стата: 54%, урон: 737.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 13, стата: 69%, урон: 837.<br>" class="help">13%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-3</td> 
+    </tr>
+    <tr class="red"> 
+     <td>53</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">dag3579</td> 
+     <td title="Боев на КВ-1: 568 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 964 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">1532</td> 
+     <td title="Сражений на аккаунте за период времени: <b>713</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 30, стата: 57%, урон: 590.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 105, стата: 52%, урон: 683.<br>" class="help">19%</td> 
+     <td>0</td> 
+     <td title=" - Камикадзе: 1<br />" class="help">1</td> 
+     <td>-4</td> 
+    </tr>
+    <tr class="red"> 
+     <td>54</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">Sedoy711</td> 
+     <td title="Боев на КВ-1: 886 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 103 " class="help">989</td> 
+     <td title="Сражений на аккаунте за период времени: <b>202</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 45, стата: 47%, урон: 802.<br>" class="help">22%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-6</td> 
+    </tr>
+    <tr class="red"> 
+     <td>55</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">General10ru</td> 
+     <td title="Боев на КВ-1: 3110 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">3110</td> 
+     <td title="Сражений на аккаунте за период времени: <b>583</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 108, стата: 55%, урон: 530.<br>" class="help">19%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-8</td> 
+    </tr>
+    <tr class="red"> 
+     <td>56</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 07.07.15" class="help">Jove__1945</td> 
+     <td title="Боев на КВ-1: 303 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">303</td> 
+     <td title="Сражений на аккаунте за период времени: <b>31</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 9, стата: 33%, урон: 193.<br>" class="help">29%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-11</td> 
+    </tr>
+    <tr class="red"> 
+     <td>57</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 19.07.15" class="help">Nikitch01</td> 
+     <td title="Боев на КВ-1: 581 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'> Pro!<br />Боев на T67: 318 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">899</td> 
+     <td title="Сражений на аккаунте за период времени: <b>57</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 3, стата: 33%, урон: —.<br><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 5, стата: 60%, урон: —.<br>" class="help">14%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-13</td> 
+    </tr>
+    <tr class="red"> 
+     <td>58</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Младший офицер<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 21.07.15" class="help">Santechnic69</td> 
+     <td title="Боев на КВ-1: 2664 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 34 " class="help">2698</td> 
+     <td title="Сражений на аккаунте за период времени: <b>208</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 18, стата: 61%, урон: 626.<br>" class="help">9%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-23</td> 
+    </tr>
+    <tr class="red"> 
+     <td>59</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">KUZNECOV_N_S</td> 
+     <td title="Боев на КВ-1: 440 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 84 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">524</td> 
+     <td title="Сражений на аккаунте за период времени: <b>31</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 2, стата: 100%, урон: —.<br>" class="help">6%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-23</td> 
+    </tr>
+    <tr class="red"> 
+     <td>60</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 05.07.15" class="help">STATOMUTATOS</td> 
+     <td title="Боев на КВ-1: 0 <br />Боев на T67: 151 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'>" class="help">151</td> 
+     <td title="Сражений на аккаунте за период времени: <b>18</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/c/c2/Usa-T67.png' />Боев: 3, стата: 100%, урон: —.<br>" class="help">17%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-23</td> 
+    </tr>
+    <tr class="red"> 
+     <td>61</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">stanislav_tu</td> 
+     <td title="Боев на КВ-1: 1113 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 0 " class="help">1113</td> 
+     <td title="Сражений на аккаунте за период времени: <b>361</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 11, стата: 45%, урон: 802.<br>" class="help">3%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-26</td> 
+    </tr>
+    <tr class="red"> 
+     <td>62</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Резервист<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 15.07.15" class="help">rxl3</td> 
+     <td title="Боев на КВ-1: 633 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 83 " class="help">716</td> 
+     <td title="Сражений на аккаунте за период времени: <b>91</b><div style='margin-top:4px'></div><img align='absmiddle' style='padding-right:10px;' src='http://wiki.gcdn.co/images/0/08/Ussr-KV1.png' />Боев: 5, стата: 100%, урон: —.<br>" class="help">5%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-33</td> 
+    </tr>
+    <tr class="red"> 
+     <td>63</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Боец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 20.07.15" class="help">BODEFINO</td> 
+     <td title="Боев на КВ-1: 1315 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 110 " class="help">1425</td> 
+     <td title="Сражений на аккаунте за период времени: <b>334</b><font color='red'><br />Игрок не сыграл ни одного боя на КВ-1 или Т67,<br /> хотя проявлял активность на других машинах!</font>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-100</td> 
+    </tr>
+    <tr class="red"> 
+     <td>64</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Новобранец<br /> - Отметился в группе ВК: <font color='red'>нет</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 18.07.15" class="help">IrkFairman</td> 
+     <td title="Боев на КВ-1: 68 <br />Боев на T67: 0 " class="help">68</td> 
+     <td title="Сражений на аккаунте за период времени: <b>101</b><font color='red'><br />Игрок не сыграл ни одного боя на КВ-1 или Т67,<br /> хотя проявлял активность на других машинах!</font>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-100</td> 
+    </tr>
+    <tr class="red"> 
+     <td>65</td> 
+     <td title="- Статус: контроль провален!<br /> - Должность: Заместитель командующего<br /> - Отметился в группе ВК: <font color='green'>да</font><br /> - Рефералов: нет<br /> - Заходил(а) в игру: 06.07.15" class="help">pashinator</td> 
+     <td title="Боев на КВ-1: 1050 <img src = 'http://cdn2.iconfinder.com/data/icons/lin/16/13.png' align='absmiddle'><br />Боев на T67: 58 " class="help">1108</td> 
+     <td title="Сражений на аккаунте за период времени: <b>24</b><font color='red'><br />Игрок не сыграл ни одного боя на КВ-1 или Т67,<br /> хотя проявлял активность на других машинах!</font>" class="help">0%</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>-100</td> 
+    </tr>
+    <tr class="pattern"> 
+     <td></td> 
+     <td></td> 
+     <td></td> 
+     <td></td> 
+     <td></td> 
+     <td></td> 
+     <td></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <br> 
+  <style type="text/css">
+    #tooltip {position: absolute;z-index: 3000;border: 1px solid #75a035;border-left-width:4px;background: white; color: #000000; padding: 5px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px; filter:alpha(opacity=90);-moz-opacity: 0.9;-khtml-opacity: 0.9;opacity: 0.9;}
+    #tooltip h3, #tooltip div {margin: 0; font-size: 14px; font-weight:normal;}
+</style> 
+  <script type="text/javascript">
+
+;(function($) {
+
+	var helper = {},
+
+		current,
+
+		title,
+
+		tID,
+
+		IE = $.browser.msie && /MSIE\s(5\.5|6\.)/.test(navigator.userAgent),
+
+		track = false;
+
+	$.tooltip = {
+		blocked: false,
+		defaults: {
+			delay: 200,
+			fade: false,
+			showURL: true,
+			extraClass: "",
+			top: 15,
+			left: 15,
+			id: "tooltip"
+		},
+		block: function() {
+			$.tooltip.blocked = !$.tooltip.blocked;
+		}
+	};
+
+	$.fn.extend({
+		tooltip: function(settings) {
+			settings = $.extend({}, $.tooltip.defaults, settings);
+			createHelper(settings);
+			return this.each(function() {
+					$.data(this, "tooltip", settings);
+					this.tOpacity = helper.parent.css("opacity");
+					this.tooltipText = this.title;
+					$(this).removeAttr("title");
+					this.alt = "";
+				})
+				.mouseover(save)
+				.mouseout(hide)
+				.click(hide);
+		},
+		fixPNG: IE ? function() {
+			return this.each(function () {
+				var image = $(this).css('backgroundImage');
+				if (image.match(/^url\(["']?(.*\.png)["']?\)$/i)) {
+					image = RegExp.$1;
+					$(this).css({
+						'backgroundImage': 'none',
+						'filter': "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src='" + image + "')"
+					}).each(function () {
+						var position = $(this).css('position');
+						if (position != 'absolute' && position != 'relative')
+							$(this).css('position', 'relative');
+					});
+				}
+			});
+		} : function() { return this; },
+		unfixPNG: IE ? function() {
+			return this.each(function () {
+				$(this).css({'filter': '', backgroundImage: ''});
+			});
+		} : function() { return this; },
+		hideWhenEmpty: function() {
+			return this.each(function() {
+				$(this)[ $(this).html() ? "show" : "hide" ]();
+			});
+		},
+		url: function() {
+			return this.attr('href') || this.attr('src');
+		}
+	});
+
+	function createHelper(settings) {
+
+		if( helper.parent )
+			return;
+
+		helper.parent = $('<div id="' + settings.id + '"><h3></h3><div class="body"></div><div class="url"></div></div>')
+
+			.appendTo(document.body)
+
+			.hide();
+
+
+		if ( $.fn.bgiframe )
+			helper.parent.bgiframe();
+
+
+		helper.title = $('h3', helper.parent);
+		helper.body = $('div.body', helper.parent);
+		helper.url = $('div.url', helper.parent);
+	}
+
+	function settings(element) {
+		return $.data(element, "tooltip");
+	}
+
+
+	function handle(event) {
+
+		if( settings(this).delay )
+			tID = setTimeout(show, settings(this).delay);
+		else
+			show();
+
+
+		track = !!settings(this).track;
+		$(document.body).bind('mousemove', update);
+
+
+		update(event);
+	}
+
+
+	function save() {
+
+		if ( $.tooltip.blocked || this == current || (!this.tooltipText && !settings(this).bodyHandler) )
+			return;
+
+
+		current = this;
+		title = this.tooltipText;
+
+		if ( settings(this).bodyHandler ) {
+			helper.title.hide();
+			var bodyContent = settings(this).bodyHandler.call(this);
+			if (bodyContent.nodeType || bodyContent.jquery) {
+				helper.body.empty().append(bodyContent)
+			} else {
+				helper.body.html( bodyContent );
+			}
+			helper.body.show();
+		} else if ( settings(this).showBody ) {
+			var parts = title.split(settings(this).showBody);
+			helper.title.html(parts.shift()).show();
+			helper.body.empty();
+			for(var i = 0, part; (part = parts[i]); i++) {
+				if(i > 0)
+					helper.body.append("<br/>");
+				helper.body.append(part);
+			}
+			helper.body.hideWhenEmpty();
+		} else {
+			helper.title.html(title).show();
+			helper.body.hide();
+		}
+
+
+		if( settings(this).showURL && $(this).url() )
+			helper.url.html( $(this).url().replace('http://', '') ).show();
+		else
+			helper.url.hide();
+
+		helper.parent.addClass(settings(this).extraClass);
+
+		if (settings(this).fixPNG )
+			helper.parent.fixPNG();
+
+		handle.apply(this, arguments);
+	}
+
+	function show() {
+		tID = null;
+		if ((!IE || !$.fn.bgiframe) && settings(current).fade) {
+			if (helper.parent.is(":animated"))
+				helper.parent.stop().show().fadeTo(settings(current).fade, current.tOpacity);
+			else
+				helper.parent.is(':visible') ? helper.parent.fadeTo(settings(current).fade, current.tOpacity) : helper.parent.fadeIn(settings(current).fade);
+		} else {
+			helper.parent.show();
+		}
+		update();
+	}
+
+	function update(event)	{
+		if($.tooltip.blocked)
+			return;
+
+		if (event && event.target.tagName == "OPTION") {
+			return;
+		}
+
+		if ( !track && helper.parent.is(":visible")) {
+			$(document.body).unbind('mousemove', update)
+		}
+
+		if( current == null ) {
+			$(document.body).unbind('mousemove', update);
+			return;
+		}
+
+		helper.parent.removeClass("viewport-right").removeClass("viewport-bottom");
+
+		var left = helper.parent[0].offsetLeft;
+		var top = helper.parent[0].offsetTop;
+		if (event) {
+			left = event.pageX + settings(current).left;
+			top = event.pageY + settings(current).top;
+			var right='auto';
+			if (settings(current).positionLeft) {
+				right = $(window).width() - left;
+				left = 'auto';
+			}
+			helper.parent.css({
+				left: left,
+				right: right,
+				top: top
+			});
+		}
+
+		var v = viewport(),
+			h = helper.parent[0];
+		if (v.x + v.cx < h.offsetLeft + h.offsetWidth) {
+			left -= h.offsetWidth + 20 + settings(current).left;
+			helper.parent.css({left: left + 'px'}).addClass("viewport-right");
+		}
+		if (v.y + v.cy < h.offsetTop + h.offsetHeight) {
+			top -= h.offsetHeight + 20 + settings(current).top;
+			helper.parent.css({top: top + 'px'}).addClass("viewport-bottom");
+		}
+	}
+
+	function viewport() {
+		return {
+			x: $(window).scrollLeft(),
+			y: $(window).scrollTop(),
+			cx: $(window).width(),
+			cy: $(window).height()
+		};
+	}
+
+	function hide(event) {
+		if($.tooltip.blocked)
+			return;
+		if(tID)
+			clearTimeout(tID);
+		current = null;
+
+		var tsettings = settings(this);
+		function complete() {
+			helper.parent.removeClass( tsettings.extraClass ).hide().css("opacity", "");
+		}
+		if ((!IE || !$.fn.bgiframe) && tsettings.fade) {
+			if (helper.parent.is(':animated'))
+				helper.parent.stop().fadeTo(tsettings.fade, 0, complete);
+			else
+				helper.parent.stop().fadeOut(tsettings.fade, complete);
+		} else
+			complete();
+
+		if( settings(this).fixPNG )
+			helper.parent.unfixPNG();
+	}
+
+})(jQuery);
+
+    </script> 
+  <script type="text/javascript">
+$(document).ready(function(){
+$("[title]").tooltip({track: true,delay: 0,showURL: false,fade: 400})
+});
+$('#clickme').click(function(){
+  $('#clickme').hide();
+  $('#content').show('slow');
+});
+</script>  
+ </body>
+</html>
