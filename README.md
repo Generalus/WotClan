@@ -1,8 +1,11 @@
 # WotClan
 <p>Программа WotClan служит для ведения статистики клана [КВ-1_] World of Tanks.<br>
 Ссылка на страницу клана: http://ru.wargaming.net/clans/140251/ <br>
-Ссылка на API: http://ru.wargaming.net/developers/api_explorer/wot/ </p>
+Ссылка на API: http://ru.wargaming.net/developers/api_explorer/wot/ </p><br><br>
 
+<b>ВНИМАНИЕ</b>: для запуска нужны библиотеки, они здесь: https://yadi.sk/d/yICCuunDhvMya
+
+<br><br>
 <p><b>ФУНКЦИОНАЛ:</b><br>
 Генерирует HTML-файл со статистикой, которая показывает как уровень игры клана в целом, так и его игроков
 по отдельности. Для этого необходимо выбрать два текстовых файла с данными формата JSON, которые были сгенерированы
